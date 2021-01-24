@@ -14,9 +14,9 @@ class MainActivity : AppCompatActivity() {
         Condition()
             .check(a > b, {
                 a = 28
-            }, {
+            }){
                 Log.e("Ellen2021", "a<b")
-            })
+            }
             .checkNoCallback(a > 26)
             .checkFalseCallback(a < b) {
                 Log.e("Ellen2021", "a等于28时，a<b")
@@ -38,4 +38,5 @@ class MainActivity : AppCompatActivity() {
             Log.e("Ellen2021", "a<b")
         }
     }
+    
 }

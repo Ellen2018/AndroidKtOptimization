@@ -42,7 +42,7 @@ class Condition {
             endPriority = priority
         }
         boolMaps[priority] = null
-        priority++;
+        priority++
         return this
     }
 
@@ -74,15 +74,11 @@ class Condition {
 
     fun start() {
         for (i in initPriority until priority) {
-            Log.e("Ellen2021","执行没start")
             val callbacks: MutableMap<Boolean, () -> Unit>? = boolMaps[i]
             if(i == endPriority){
-                Log.e("Ellen2021","结束位置:${endPriority}")
                 break
             }
-            if (callbacks == null) {
-
-            } else {
+            if (callbacks != null) {
                 val trueCallback: (() -> Unit)? = callbacks[true]
                 if (trueCallback != null) {
                     trueCallback()
