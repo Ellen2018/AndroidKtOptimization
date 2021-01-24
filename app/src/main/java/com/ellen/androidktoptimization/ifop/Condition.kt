@@ -24,13 +24,10 @@ class Condition {
     fun check(condition: Boolean, trueCallback: () -> Unit, falseCallback: () -> Unit): Condition {
         val callbacks: MutableMap<Boolean, () -> Unit> = HashMap()
         if (condition) {
-            Log.e("Ellen2021","执行没true")
             callbacks[true] = trueCallback
         } else {
-            Log.e("Ellen2021","执行没false")
             callbacks[false] = falseCallback
         }
-        Log.e("Ellen2021","执行没check")
         boolMaps[priority] = callbacks
         priority++
         return this
