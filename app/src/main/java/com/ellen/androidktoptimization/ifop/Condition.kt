@@ -15,6 +15,12 @@ class Condition {
     private var priority: Int = initPriority
     private var endPriority = -1
 
+    private fun init(){
+        boolMaps.clear()
+        priority = initPriority
+        endPriority = -1
+    }
+
     fun check(condition: Boolean, trueCallback: () -> Unit, falseCallback: () -> Unit): Condition {
         val callbacks: MutableMap<Boolean, () -> Unit> = HashMap()
         if (condition) {
@@ -87,5 +93,6 @@ class Condition {
                 }
             }
         }
+        init()
     }
 }
